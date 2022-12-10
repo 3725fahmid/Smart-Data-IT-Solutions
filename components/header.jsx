@@ -1,231 +1,64 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/header.module.css'
-import logoLight from '../public/images/logo/logo-light.png'
+// import logoLight from '../public/images/logo/logo-light.png'
+import logoDark from '../public/images/logo/logo-dark.png'
 
- const header = () => {
+const header = () => {
   return (
     <>
-    <header className={`${styles["header"]} ${styles["header-transparent"]}`}>
-          <nav className={`${styles["navbar"]} ${styles["navbar-expand-lg"]} ${styles["sticky-navbar"]}`}>
-        <div className={`${styles["container"]}`}>
-
-          <a className={`${styles["navbar-brand"]}`} href="index.html">
-            {logoLight}
-            <img src="assets/images/logo/logo-dark.png" className="logo-dark" alt="logo"/>
+        <div className="NavBar">
+      <nav className="px-2 bg-white border-gray-200 bg-opacity-30 dark:bg-gray-900 dark:border-gray-700">
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
+          <a href="#" className="flex items-center">
+            {/* <Image src={logoLight} className={`${styles["logo-light"]}`} alt="logo" /> */}
+            <Image src={logoDark} className={`${styles["logo-dark"]}`} alt="logo" />
           </a>
-          <button className="navbar-toggler" type="button">
-            <span className="menu-lines"><span></span></span>
+          <button data-collapse-toggle="navbar-dropdown" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+            <span className="sr-only">Open main menu</span>
+            <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
           </button>
-          <div className="collapse navbar-collapse" id="mainNavigation">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav__item  has-dropdown">
-                <a href="index.html" data-toggle="dropdown" className="dropdown-toggle nav__item-link active">Home</a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <a href="index.html" className="nav__item-link">Home Main</a>
-                  </li>
-
-                 {/* <!-- /.nav-item -->  */}
-                  <li className="nav__item">
-                    <a href="home-modern.html" className="nav__item-link">Home Modern</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="home-classNameic.html" className="nav__item-link">Home ClassnclassNameic</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                </ul>
-                {/* <!-- /.dropdown-menu --> */}
+          <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="#" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
               </li>
-              {/* <!-- /.nav-item --> */}
-              <li className="nav__item  has-dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle nav__item-link">Company</a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <a href="about-us.html" className="nav__item-link">About Us</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="why-us.html" className="nav__item-link">Why Choose Us</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="leadership-team.html" className="nav__item-link">Leadership Team</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="awards.html" className="nav__item-link">Award & Recognition</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="pricing.html" className="nav__item-link">Pricing & Plans</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="faqs.html" className="nav__item-link">Help & FAQs</a>
-                  </li> 
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="careers.html" className="nav__item-link">Careers</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                </ul>
-                {/* <!-- /.dropdown-menu --> */}
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                  Company
+                  <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                {/* <!-- Dropdown menu --> */}
+                <div id="dropdownNavbar" className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                  <ul className="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Company</a>
+                    </li>
+                    <li>
+                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                      <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                    </li>
+                  </ul>
+                  <div className="py-1">
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
+                  </div>
+                </div>
               </li>
-              {/* <!-- /.nav-item --> */}
-              <li className="nav__item  has-dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle nav__item-link">IT Solutions</a>
-                <ul className="dropdown-menu wide-dropdown-menu">
-                  <li className="nav__item">
-                    <div className="row mx-0">
-                      <div className="col-sm-6 dropdown-menu-col">
-                        <a href="it-solutions.html" className="nav__item-link dropdown-menu-title">IT Solutions</a>
-                        <ul className="nav flex-column">
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">IT
-                              Management</a>
-                          </li> 
-                          {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">Cyber
-                              Security</a>
-                          </li> 
-                          {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">Cloud
-                              Computing</a>
-                          </li> 
-                          {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">IT
-                              Consulting</a>
-                          </li> 
-                          {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">Software
-                              Dev</a>
-                          </li> 
-                          {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="it-solutions-single.html">IT Support</a>
-                          </li>
-                          
-                          {/* <!-- /.nav-item --> */}
-                        </ul>
-                      </div>
-                      {/* <!-- /.col-sm-6 --> */}
-                      <div className="col-sm-6 dropdown-menu-col">
-                        <a href="industries.html" className="nav__item-link dropdown-menu-title">Industries</a>
-                        <ul className="nav flex-column">
-                          <li className="nav__item"><a className="nav__item-link"
-                              href="industries-single-industry.html">Education,
-                              Non-Profit</a></li> 
-                              {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link"
-                              href="industries-single-industry.html">Accounting,
-                              Finance</a></li> 
-                              {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link"
-                              href="industries-single-industry.html">Government &
-                              Public</a></li> 
-                              {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="industries-single-industry.html">Energy
-                              &
-                              Utilities</a></li> 
-                              {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link" href="industries-single-industry.html">Legal,
-                              Law
-                              Firms</a></li> 
-                              {/* <!-- /.nav-item --> */}
-                          <li className="nav__item"><a className="nav__item-link"
-                              href="industries-single-industry.html">Manufacturing</a>
-                          </li>
-                          
-                          {/* <!-- /.nav-item --> */}
-                        </ul>
-                      </div>
-                      {/* <!-- /.col-sm-6 --> */}
-                    </div>
-                    {/* <!-- /.row --> */}
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                </ul>
-                {/* <!-- /.dropdown-menu --> */}
+              <li>
+                <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
               </li>
-              {/* <!-- /.nav-item --> */}
-              <li className="nav__item  has-dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle nav__item-link">News&Media</a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <a href="blog.html" className="nav__item-link">Our Blog</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="blog-single-post.html" className="nav__item-link">Single Blog Post</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="case-studies-grid.html" className="nav__item-link">Case Studies Grid</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="case-studies-carousel.html" className="nav__item-link">Case Studies Carousel</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="case-studies-classNameic.html" className="nav__item-link">Case Studies ClassnclassNameic</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="case-studies-single.html" className="nav__item-link">Single Case Study</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                </ul>
-                {/* <!-- /.dropdown-menu --> */}
+              <li>
+                <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
               </li>
-              {/* <!-- /.nav-item --> */}
-              <li className="nav__item  has-dropdown">
-                <a href="#" data-toggle="dropdown" className="dropdown-toggle nav__item-link">Features</a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <a href="coming-soon.html" className="nav__item-link">Coming Soon</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="404.html" className="nav__item-link">404 Page</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="#" className="nav__item-link  open-register-popup">Register</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                  <li className="nav__item">
-                    <a href="#" className="nav__item-link  open-login-popup">Login</a>
-                  </li>
-                  {/* <!-- /.nav-item --> */}
-                </ul>
-                {/* <!-- /.dropdown-menu --> */}
+              <li>
+                <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
               </li>
-              {/* <!-- /.nav-item --> */}
-              <li className="nav__item">
-                <a href="contact-us.html" className="nav__item-link">Contacts</a>
-              </li>
-              {/* <!-- /.nav-item --> */}
             </ul>
-            {/* <!-- /.navbar-nav --> */}
           </div>
-          {/* <!-- /.navbar-collapse --> */}
-          <ul className="navbar-actions list-unstyled mb-0 d-flex align-items-center">
-            <li className="d-none d-xl-block">
-              <a href="request-quote.html" className="btn action__btn-contact">Request A Quote</a>
-            </li>
-            <li>
-              <button className="action__btn action__btn-login open-login-popup">
-                <i className="icon-user"></i><span>Login</span>
-              </button>
-            </li>
-          </ul>
-          {/* <!-- /.navbar-actions --> */}
         </div>
-        {/* <!-- /.container --> */}
       </nav>
-      {/* <!-- /.navabr --></div> */} 
-      </header>   
+      </div>
     </>
   )
 }
